@@ -23,7 +23,7 @@ import com.breshy.zawadimart.ui.screens.start.StartScreen
 fun AppNavHost(
     modifier: Modifier = Modifier,
     navController: NavHostController = rememberNavController(),
-    startDestination: String = ROUT_HOME
+    startDestination: String = ROUT_DASHBOARD
 ) {
 
     NavHost(
