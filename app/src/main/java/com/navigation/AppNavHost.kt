@@ -12,10 +12,13 @@ import com.breshy.zawadimart.navigation.ROUT_DASHBOARD
 import com.breshy.zawadimart.navigation.ROUT_ITEM
 import com.breshy.zawadimart.navigation.ROUT_START
 import com.breshy.zawadimart.navigation.ROUT_INTENT
+import com.breshy.zawadimart.navigation.ROUT_SERVICE
 import com.breshy.zawadimart.ui.screens.about.AboutScreen
+import com.breshy.zawadimart.ui.screens.dashboard.DashboardScreen
 import com.breshy.zawadimart.ui.screens.home.HomeScreen
 import com.breshy.zawadimart.ui.screens.intent.IntentScreen
 import com.breshy.zawadimart.ui.screens.item.ItemScreen
+import com.breshy.zawadimart.ui.screens.service.ServiceScreen
 import com.breshy.zawadimart.ui.screens.start.StartScreen
 
 
@@ -47,7 +50,10 @@ fun AppNavHost(
             IntentScreen(navController)
         }
         composable(ROUT_DASHBOARD) {
-            IntentScreen(navController)
+            DashboardScreen(navController)
+        }
+        composable(ROUT_SERVICE) {
+            ServiceScreen(navController)
         }
 
     }

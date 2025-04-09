@@ -2,6 +2,7 @@ package com.breshy.zawadimart.ui.screens.dashboard
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -14,7 +15,9 @@ import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material3.Card
@@ -27,20 +30,30 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.breshy.zawadimart.R
+import com.breshy.zawadimart.navigation.ROUT_ABOUT
+import com.breshy.zawadimart.navigation.ROUT_HOME
+import com.breshy.zawadimart.navigation.ROUT_ITEM
 import com.breshy.zawadimart.ui.theme.newBlue
 import com.breshy.zawadimart.ui.theme.newwhite
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DashboardScreen(navController: NavHostController) {
-    Column (modifier = Modifier.fillMaxSize().background(newBlue)){
+    Column (
+        modifier = Modifier
+            .fillMaxSize()
+            .background(newBlue)
+            .verticalScroll(rememberScrollState())
+    ){
 
         //Box
         Box {
@@ -70,7 +83,10 @@ fun DashboardScreen(navController: NavHostController) {
                     .offset(y = 90.dp)
 
             ){
-
+                Text(
+                    text = "WELCOME",
+                    modifier = Modifier.fillMaxSize()
+                )
             }
 
         }
@@ -81,14 +97,19 @@ fun DashboardScreen(navController: NavHostController) {
         //Row1
         Row (modifier = Modifier.padding(start = 20.dp)){
             //Card1
-            Card (modifier = Modifier.width(150.dp).height(180.dp)){
+            Card (
+                modifier = Modifier
+                    .width(150.dp)
+                    .height(180.dp)
+                    .clickable{navController.navigate(ROUT_HOME)}
+            ){
                 Column (
                     modifier = Modifier.fillMaxSize(),
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Center
                 ){
                     Image(
-                        painter = painterResource(R.drawable.home),
+                        painter = painterResource(R.drawable.home2),
                         contentDescription = "shirts",
                         modifier = Modifier.size(100.dp)
                     )
@@ -97,21 +118,26 @@ fun DashboardScreen(navController: NavHostController) {
             }
             //End of Card1
 
-            Spacer(modifier = Modifier.width(20.dp))
+            Spacer(modifier = Modifier.width(40.dp))
 
             //Card2
-            Card (modifier = Modifier.width(150.dp).height(180.dp)){
+            Card (
+                modifier = Modifier
+                    .width(150.dp)
+                    .height(180.dp)
+                    .clickable{navController.navigate(ROUT_ABOUT)}
+            ){
                 Column (
                     modifier = Modifier.fillMaxSize(),
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Center
                 ){
                     Image(
-                        painter = painterResource(R.drawable.home),
+                        painter = painterResource(R.drawable.about),
                         contentDescription = "shirts",
                         modifier = Modifier.size(100.dp)
                     )
-                    Text(text = "Home", fontSize = 15.sp)
+                    Text(text = "About", fontSize = 15.sp)
                 }
             }
             //End of Card2
@@ -132,30 +158,35 @@ fun DashboardScreen(navController: NavHostController) {
                     verticalArrangement = Arrangement.Center
                 ){
                     Image(
-                        painter = painterResource(R.drawable.home),
+                        painter = painterResource(R.drawable.contact),
                         contentDescription = "shirts",
                         modifier = Modifier.size(100.dp)
                     )
-                    Text(text = "Home", fontSize = 15.sp)
+                    Text(text = "Contact", fontSize = 15.sp)
                 }
             }
             //End of Card1
 
-            Spacer(modifier = Modifier.width(20.dp))
+            Spacer(modifier = Modifier.width(40.dp))
 
             //Card2
-            Card (modifier = Modifier.width(150.dp).height(180.dp)){
+            Card (
+                modifier = Modifier
+                    .width(150.dp)
+                    .height(180.dp)
+                    .clickable{navController.navigate(ROUT_ITEM)}
+            ){
                 Column (
                     modifier = Modifier.fillMaxSize(),
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Center
                 ){
                     Image(
-                        painter = painterResource(R.drawable.home),
+                        painter = painterResource(R.drawable.products),
                         contentDescription = "shirts",
                         modifier = Modifier.size(100.dp)
                     )
-                    Text(text = "Home", fontSize = 15.sp)
+                    Text(text = "Product", fontSize = 15.sp)
                 }
             }
             //End of Card2
