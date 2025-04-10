@@ -27,6 +27,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.breshy.zawadimart.R
+import com.breshy.zawadimart.navigation.ROUT_DASHBOARD
 import com.breshy.zawadimart.ui.theme.newBlue
 
 @Composable
@@ -66,7 +67,9 @@ fun StartScreen(navController: NavHostController) {
         Spacer(modifier = Modifier.height(20.dp))
 
         Button(
-            onClick = {},
+            onClick = {
+                navController.navigate(ROUT_DASHBOARD)
+            },
             colors = ButtonDefaults.buttonColors(newBlue),
             modifier = Modifier.fillMaxWidth().padding(start = 20.dp, end = 20.dp)
         ) {
