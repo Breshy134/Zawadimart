@@ -47,6 +47,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.focus.focusModifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -61,6 +62,9 @@ import androidx.navigation.compose.rememberNavController
 import com.breshy.zawadimart.R
 import com.breshy.zawadimart.navigation.ROUT_HOME
 import com.breshy.zawadimart.ui.theme.newBlue
+import com.breshy.zawadimart.ui.theme.newgreen
+import com.breshy.zawadimart.ui.theme.neworange
+import com.breshy.zawadimart.ui.theme.newwhite
 
 @Composable
 fun InfoScreen(navController: NavHostController) {
@@ -148,7 +152,7 @@ fun InfoScreen(navController: NavHostController) {
                             .height(180.dp)
                     ){
                         Column (
-                            modifier = Modifier.fillMaxSize().padding(start = 20.dp),
+                            modifier = Modifier.fillMaxSize().padding(start = 20.dp).background(newBlue),
                             verticalArrangement = Arrangement.Center
                         ){
 
@@ -165,11 +169,12 @@ fun InfoScreen(navController: NavHostController) {
                             .height(180.dp)
                     ){
                         Column (
-                            modifier = Modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally,
+                            modifier = Modifier.fillMaxSize().background(neworange), horizontalAlignment = Alignment.CenterHorizontally,
                             verticalArrangement = Arrangement.Center
                         ){
 
-                            Text(text = "", fontSize = 15.sp)
+                            Text(text = "Statistics", fontSize = 15.sp)
+                            Text(text = "Dashboard", fontSize = 15.sp)
                         }
                     }
                     //End of Card2
@@ -181,7 +186,7 @@ fun InfoScreen(navController: NavHostController) {
                             .height(180.dp)
                     ){
                         Column (
-                            modifier = Modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally,
+                            modifier = Modifier.fillMaxSize().background(newgreen), horizontalAlignment = Alignment.CenterHorizontally,
                             verticalArrangement = Arrangement.Center
                         ){
 
@@ -192,6 +197,111 @@ fun InfoScreen(navController: NavHostController) {
 
                 }
                 //End of Row
+                Spacer(modifier = Modifier.height(40.dp))
+                //Row
+                Row (
+                    modifier = Modifier
+                        .padding(start = 20.dp)
+                        .horizontalScroll(rememberScrollState())
+                ){
+                    //Card1
+                    Card (
+                        modifier = Modifier
+                            .width(350.dp)
+                            .height(500.dp)
+                    ){
+                        Column (){
+                            Text(
+                                text = "Personal Task",
+                                fontSize = 25.sp,
+                                fontWeight = FontWeight.Bold,
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(start = 30.dp, top = 20.dp),
+                            )
+                            Spacer(modifier = Modifier.height(40.dp))
+                            Card (
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .height(70.dp)
+                                    .padding(start = 20.dp, end = 20.dp)
+                            ){
+                                Row (
+                                    modifier = Modifier
+                                        .background(newwhite)
+                                ){
+                                    Image(
+                                        painter = painterResource(R.drawable.img_1),
+                                        contentDescription = "shirts",
+                                        modifier = Modifier.size(100.dp)
+                                    )
+                                    Column (
+                                        modifier = Modifier.padding(top = 20.dp)
+                                    ){
+                                        Text(text = "NDA Review for website project", fontWeight = FontWeight.Bold)
+                                        Text(text = "Today - 10pm")
+                                    }
+                                }
+                                Spacer(modifier = Modifier.height(25.dp))
+                                Row (
+                                    modifier = Modifier
+                                        .background(newwhite)
+                                ){
+                                    Image(
+                                        painter = painterResource(R.drawable.img_2),
+                                        contentDescription = "shirts",
+                                        modifier = Modifier.size(100.dp)
+                                    )
+                                    Column (
+                                        modifier = Modifier.padding(top = 20.dp)
+                                    ){
+                                        Text(text = "NDA Review for website project", fontWeight = FontWeight.Bold)
+                                        Text(text = "Today - 10pm")
+                                    }
+                                }
+                                Row (
+                                    modifier = Modifier
+                                        .background(newwhite)
+                                ){
+                                    Image(
+                                        painter = painterResource(R.drawable.img_1),
+                                        contentDescription = "shirts",
+                                        modifier = Modifier.size(100.dp)
+                                    )
+                                    Column (
+                                        modifier = Modifier.padding(top = 20.dp)
+                                    ){
+                                        Text(text = "NDA Review for website project", fontWeight = FontWeight.Bold)
+                                        Text(text = "Today - 10pm")
+                                    }
+                                }
+                                Spacer(modifier = Modifier.height(25.dp))
+                                Row (
+                                    modifier = Modifier
+                                        .background(newwhite)
+                                ){
+                                    Image(
+                                        painter = painterResource(R.drawable.img_2),
+                                        contentDescription = "shirts",
+                                        modifier = Modifier.size(100.dp)
+                                    )
+                                    Column (
+                                        modifier = Modifier.padding(top = 20.dp)
+                                    ){
+                                        Text(text = "NDA Review for website project", fontWeight = FontWeight.Bold)
+                                        Text(text = "Today - 10pm")
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    //End of Card1
+                    Spacer(modifier = Modifier.width(20.dp))
+
+
+                }
+                //End of Row
+
 
             }
         }
