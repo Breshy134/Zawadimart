@@ -10,6 +10,7 @@ import com.breshy.zawadimart.navigation.ROUT_HOME
 import com.breshy.zawadimart.navigation.ROUT_ABOUT
 import com.breshy.zawadimart.navigation.ROUT_DASHBOARD
 import com.breshy.zawadimart.navigation.ROUT_FORM
+import com.breshy.zawadimart.navigation.ROUT_FORM1
 import com.breshy.zawadimart.navigation.ROUT_ITEM
 import com.breshy.zawadimart.navigation.ROUT_START
 import com.breshy.zawadimart.navigation.ROUT_INTENT
@@ -28,7 +29,7 @@ import com.breshy.zawadimart.ui.screens.start.StartScreen
 fun AppNavHost(
     modifier: Modifier = Modifier,
     navController: NavHostController = rememberNavController(),
-    startDestination: String = ROUT_FORM
+    startDestination: String = ROUT_SPLASH
 ) {
 
     NavHost(
@@ -61,6 +62,9 @@ fun AppNavHost(
             ServiceScreen(navController)
         }
         composable(ROUT_FORM) {
+            ServiceScreen(navController)
+        }
+        composable(ROUT_FORM1) {
             ServiceScreen(navController)
         }
 

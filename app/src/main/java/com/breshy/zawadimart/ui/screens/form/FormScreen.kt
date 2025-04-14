@@ -91,9 +91,9 @@ fun FormScreen(navController: NavHostController) {
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
 
         )
-        //End if username
+        //End if fullname
         Spacer(modifier = Modifier.height(10.dp))
-        //fullname
+        //username
         TextField(
             value = username,
             onValueChange = {username = it},
@@ -109,7 +109,7 @@ fun FormScreen(navController: NavHostController) {
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
 
         )
-        //End if fullname
+        //End if username
         Spacer(modifier = Modifier.height(10.dp))
         //fullname
         TextField(
@@ -129,7 +129,7 @@ fun FormScreen(navController: NavHostController) {
         )
         //End if fullname
         Spacer(modifier = Modifier.height(10.dp))
-        //fullname
+        //passwoord
         TextField(
             value = password,
             onValueChange = {password = it},
@@ -146,7 +146,7 @@ fun FormScreen(navController: NavHostController) {
             visualTransformation = PasswordVisualTransformation()
 
         )
-        //End if fullname
+        //End if password
         Spacer(modifier = Modifier.height(10.dp))
         //Confirmpassword
         TextField(
