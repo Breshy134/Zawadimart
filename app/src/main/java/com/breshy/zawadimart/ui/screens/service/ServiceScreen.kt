@@ -131,6 +131,9 @@ fun ServiceScreen(navController: NavHostController) {
                 Icon(Icons.Default.Add, contentDescription = "Add")
             }
         },
+        //End of BottomBar
+
+        
         //Content
         content = { paddingValues ->
             Column(

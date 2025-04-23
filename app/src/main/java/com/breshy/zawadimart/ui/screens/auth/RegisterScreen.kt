@@ -29,6 +29,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.breshy.zawadimart.R
 import com.breshy.zawadimart.model.User
+import com.breshy.zawadimart.navigation.ROUT_DASHBOARD
 import com.breshy.zawadimart.navigation.ROUT_LOGIN
 import com.breshy.zawadimart.viewmodel.AuthViewModel
 
@@ -208,7 +209,7 @@ fun RegisterScreen(
         Spacer(modifier = Modifier.height(5.dp))
 
         TextButton(
-            onClick = { navController.navigate(ROUT_LOGIN) }
+            onClick = { navController.navigate(ROUT_DASHBOARD) }
         ) {
             Text("Already have an account? Login")
         }

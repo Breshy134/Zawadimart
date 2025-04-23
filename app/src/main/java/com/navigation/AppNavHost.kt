@@ -3,6 +3,7 @@ package com.breshy.navigation
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.lifecycle.ViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -17,6 +18,7 @@ import com.breshy.zawadimart.navigation.ROUT_ITEM
 import com.breshy.zawadimart.navigation.ROUT_START
 import com.breshy.zawadimart.navigation.ROUT_INTENT
 import com.breshy.zawadimart.navigation.ROUT_LOGIN
+import com.breshy.zawadimart.navigation.ROUT_PRODUCT_LIST
 import com.breshy.zawadimart.navigation.ROUT_REGISTER
 import com.breshy.zawadimart.navigation.ROUT_SERVICE
 import com.breshy.zawadimart.navigation.ROUT_SPLASH
@@ -31,13 +33,15 @@ import com.breshy.zawadimart.ui.screens.item.ItemScreen
 import com.breshy.zawadimart.ui.screens.service.ServiceScreen
 import com.breshy.zawadimart.ui.screens.start.StartScreen
 import com.breshy.zawadimart.viewmodel.AuthViewModel
+import com.breshy.zawadimart.viewmodel.ProductViewModel
 
 
 @Composable
 fun AppNavHost(
     modifier: Modifier = Modifier,
     navController: NavHostController = rememberNavController(),
-    startDestination: String = ROUT_SPLASH
+    startDestination: String = ROUT_PRODUCT_LIST,
+    //productViewModel: ProductViewModel = ViewModel(),
 ) {
 
 
@@ -99,6 +103,8 @@ fun AppNavHost(
                 }
             }
         }
+
+        //98 -> 115
 
     }
 }
